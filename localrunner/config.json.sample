@@ -1,0 +1,5 @@
+{
+  "expected_up": 50, //what upload speed are you paying for?
+  "expected_down": 50, //what download speed are you paying for?
+  "location": 19144 //zip code
+}

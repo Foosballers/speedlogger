@@ -25,6 +25,8 @@ import timeit
 import platform
 import threading
 import logger
+import json
+
 
 __version__ = '0.3.4'
 
@@ -737,8 +739,8 @@ def speedtest():
     print_('Upload: %0.2f M%s/s' %
            ((ulspeed / 1000 / 1000) * args.units[1], args.units[0]))
 
-
-    logger.logrun(latency, dlspeed, ulspeed, args.units[0], args.units[1])
+    isp=config["client"]["isp"]
+    logger.log_run(isp, latency, dlspeed, ulspeed)
 
     if args.share and args.mini:
         print_('Cannot generate a speedtest.net share results image while '

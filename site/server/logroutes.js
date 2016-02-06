@@ -3,13 +3,13 @@ var express = require('express'),
     bodyParser = require('body-parser');
 
 var template = {
-    upspeed: "double",
-    expectedupspeed: "double",
-    downspeed: "double",
-    expecteddownspeed: "double",
-    ping: "int",
-    provider: ["Verizon", "Comcast", "ATT", "Verizon Wireless", "T-Mobile", "ATT Wireless"],
-    location: "string"
+    'upspeed': 'double',
+    'expected-upspeed': 'double',
+    'downspeed': 'double',
+    'expected-downspeed': 'double',
+    'provider': 'string',
+    'location': 'string',
+    'test-host': {'latency': 'double', 'lat': 'double', 'lon':'double', 'name': 'string', 'sponsor': 'string'}
 };
 
 logroutes.get('/', (req, res) => {
@@ -26,7 +26,7 @@ logroutes.get('/:id', (req, res) => {
 });
 
 logroutes.post('/', (req, res) => {
-    console.log(req.body);
+    console.log(JSON.stringify(req.body, null, 2));
     var log = req.body;
     log.links = {
         self: "/api/logs/1"
