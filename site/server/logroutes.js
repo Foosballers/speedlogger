@@ -26,6 +26,7 @@ logroutes.get('/:id', (req, res) => {
 });
 
 logroutes.post('/', (req, res) => {
+    console.log(req.body);
     var log = req.body;
     log.links = {
         self: "/api/logs/1"
